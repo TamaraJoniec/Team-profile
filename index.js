@@ -4,13 +4,9 @@ import Intern from './lib/Intern.js';
 import inquirer from 'inquirer';
 import path from 'path';
 import { promises as fs } from 'fs';
-import render from "./src/page-template.js";
-import Employee from "./lib/Employee.js";
-const __filename = fileURLToPath(import.meta.url);
+import generateTeam from "./src/page-template.js";
 
-
-
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(path.dirname(new URL(import.meta.url).pathname), "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const teamMembers = [];
 
@@ -119,7 +115,6 @@ async function questions() {
     }
 
     const employees = [Manager, Engineer, Intern];
-    const html = render(employees);
-
+    const html = generateTeam(teamMembers);
     fs.writeFileSync(outputPath, html);
 }
