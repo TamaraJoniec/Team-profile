@@ -7,7 +7,7 @@ import { promises as fs } from 'fs';
 import generateTeam from "./src/page-template.js";
 
 const OUTPUT_DIR = path.resolve(path.dirname(new URL(import.meta.url).pathname), "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.resolve(OUTPUT_DIR, "team.html");
 const teamMembers = [];
 
 async function questions() {
@@ -118,3 +118,4 @@ async function questions() {
     const html = generateTeam(teamMembers);
     fs.writeFileSync(outputPath, html);
 }
+questions();
