@@ -50,7 +50,7 @@ async function questions() {
       message: "Which type of employee would you like to add next?",
       choices: ["Engineer", "Intern", "I don't want to add any more team members"],
     });
-};
+
     switch (employeeType) {
       case "Engineer":
         const { engName, engId, engEmail, github } = await inquirer.prompt([
@@ -109,9 +109,15 @@ async function questions() {
           const intern = new Intern(internName, internId, internEmail, school);
           teamMembers.push(intern);
           break;
-      };
-    };
+          
+          default:
+            addMore = false;
+            break;
+        }
+      }
+  
       const employees = [Engineer, Intern, Manager];
       const html = render(employees);
       
       fs.writeFileSync(outputPath, html);
+    }
