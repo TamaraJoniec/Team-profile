@@ -82,3 +82,7 @@ const questions = await inquirer.prompt([
         message: "What's the intern's school called?",
     }
 ]);
+
+const employees = [Engineer, Intern, Manager];
+const html = render(employees);
+fs.writeFileSync(outputPath, html);
