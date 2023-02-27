@@ -3,7 +3,7 @@ import Engineer from './lib/Engineer.js';
 import Intern from './lib/Intern.js';
 import inquirer from 'inquirer';
 import path from 'path';
-import { promises as fs } from 'fs';
+import * as fs from 'fs';
 import generateTeam from "./src/page-template.js";
 
 const OUTPUT_DIR = path.resolve(path.dirname(new URL(import.meta.url).pathname), "output");
@@ -115,7 +115,8 @@ async function questions() {
     }
 
     const employees = [Manager, Engineer, Intern];
-    const html = generateTeam(teamMembers);
+    const html = generateTeam(teamMembers, employees);
     fs.writeFileSync(outputPath, html);
+
 }
 questions();
