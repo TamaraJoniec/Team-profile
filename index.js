@@ -82,5 +82,3 @@ const questions = await inquirer.prompt([
         message: "What's the intern's school called?",
     }
 ]);
-
-render()
