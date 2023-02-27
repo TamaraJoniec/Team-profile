@@ -35,6 +35,52 @@ const questions = await inquirer.prompt([
         name: 'Office Number',
         message: "What's the team manager's office number?",
     },
+    {
+        type: 'list',
+        name: 'Add staff members',
+        message: "Would you like to add any other members of staff?",
+        choices: ['Add an engineer', 'Add an intern', 'Finish building the team']
+    },
+    {
+        type: 'input',
+        name: 'Title',
+        message: "What's the engineer's name?",
+    },
+    {
+        type: 'input',
+        name: 'ID',
+        message: "What's the engineer's employee ID?",
+    },
+    {
+        type: 'input',
+        name: 'Email',
+        message: "What's the engineer's email?",
+    },
+    {
+        type: 'input',
+        name: 'GitHub',
+        message: "What's the engineer's GitHub username?",
+    },
+    {
+        type: 'input',
+        name: 'Title',
+        message: "What's the intern's name?",
+    },
+    {
+        type: 'input',
+        name: 'ID',
+        message: "What's the intern's employee ID?",
+    },
+    {
+        type: 'input',
+        name: 'Email',
+        message: "What's the intern's email?",
+    },
+    {
+        type: 'input',
+        name: 'School',
+        message: "What's the intern's school called?",
+    }
+]);
 
-
-])
+render()
