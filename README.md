@@ -35,6 +35,6 @@ As a manager a user want to generate a webpage that displays my team's basic inf
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
+![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/14-object-oriented-programming-challenge-demo.png)
 
 
